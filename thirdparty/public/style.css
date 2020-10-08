@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic");
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Roboto,Helvetica,Arial;
+    background: #fbfbfb;
+    color: #999;
+    text-align: center;
+    padding-top: 40px;
+}
+
+input {
+    border: 1px solid #999;
+    border-radius: 4px;
+    padding: 2px 4px;
+    color: #999;
+}
+
+.info {
+    color: blue;
+    border-color: blue;
+    background: lightskyblue;
+}
+
+.success {
+    color: green;
+    border-color: green;
+    background: palegreen;
+}
+
+.warning {
+    color: goldenrod;
+    border-color: goldenrod;
+    background: lemonchiffon;
+}
+
+.error {
+    color: red;
+    border-color: red;
+    background: pink;
+}
+
+form#calc, form#calc > input {
+    font-size: 20pt;
+}
+
+form#calc > input {
+    text-align: center;
+}
+
+form#calc {
+    display: none;
+}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Golang Calculator</title>
+        <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+        <script src="js/wasm_exec.js"></script>
+        <script>
+            go = new Go();
+            WebAssembly.instantiateStreaming(fetch("js/main.wasm"), go.importObject)
+                .then(result => { go.run(result.instance); });
+        </script>
+    </head>
+    <body>
+        <h1>Golang Calculator</h1>
+        <div id="loading">Loading ...</div>
+        <form id="calc">
+            <input type="text" id="first-number" size="2" />
+            +
+            <input type="text" id="second-number" size="2" />
+            =
+            <input type="text" id="result" size="2" readonly />
+        </form>
+    </body>
+</html>

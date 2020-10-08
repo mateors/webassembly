@@ -1,0 +1,30 @@
+<html>  
+    <head>
+        <meta charset="utf-8"/>
+        <script src="wasm_exec.js"></script>
+        <script>
+            const go = new Go();
+            if (WebAssembly.instantiateStreaming) {
+
+                WebAssembly.instantiateStreaming(fetch("mat.wasm"), go.importObject).then((result) => {
+                    go.run(result.instance);
+                    console.log(printMessage("hello"));//calling golang func directly from js
+                    console.log(add('val1','val2'));
+                    console.log(sum(5,4));
+                });
+
+            }
+
+
+
+        </script>
+    </head>
+    <body>
+
+      <input type="text" id="val1" value="3">
+      <input type="text" id="val2" value="4">
+
+      <button id="btnAdd">Add</button>
+
+    </body>
+</html>  
