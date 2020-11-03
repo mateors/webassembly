@@ -25,3 +25,6 @@
 
         }
     </script>`
+
+# Resources
+* https://github.com/johnstarich/go-wasm
